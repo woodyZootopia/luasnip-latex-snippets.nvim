@@ -31,8 +31,14 @@ local math_iA = {
 
   ls.parser.parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
   ls.parser.parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
+  ls.parser.parse_snippet({ trig = "pw", name = "to the ... power ^{}" }, "^{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "sb", name = "subscript" }, "_{$1}$0"),
+  ls.parser.parse_snippet({ trig = "__", name = "subscript" }, "_{\\text{$1}}$0"),
   ls.parser.parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
   ls.parser.parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
+  ls.parser.parse_snippet({ trig = "TT", name = "transposed" }, "^\\top"),
+  ls.parser.parse_snippet({ trig = "trs", name = "transposed" }, "^\\top"),
+
 
   ls.parser.parse_snippet({ trig = "EE", name = "exists" }, "\\exists "),
   ls.parser.parse_snippet({ trig = "AA", name = "forall" }, "\\forall "),
@@ -122,7 +128,6 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "==", name = "equals" }, [[&= $1 \\\\]]),
   ls.parser.parse_snippet({ trig = "!=", name = "not equals" }, "\\neq "),
   ls.parser.parse_snippet({ trig = "compl", name = "complement" }, "^{c}"),
-  ls.parser.parse_snippet({ trig = "__", name = "subscript" }, "_{$1}$0"),
   ls.parser.parse_snippet({ trig = "=>", name = "implies" }, "\\implies"),
   ls.parser.parse_snippet({ trig = "=<", name = "implied by" }, "\\impliedby"),
   ls.parser.parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),
@@ -132,6 +137,28 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "invs", name = "inverse" }, "^{-1}"),
   ls.parser.parse_snippet({ trig = "~~", name = "~" }, "\\sim "),
   ls.parser.parse_snippet({ trig = "conj", name = "conjugate" }, "\\overline{$1}$0"),
+
+  ls.parser.parse_snippet(
+    { trig = "(", name = "left( right)" },
+    "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "||", name = "left| right|" },
+    "\\left\\| ${1:${TM_SELECTED_TEXT}} \\right\\| $0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "{{", name = "left{ right}" },
+    "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "[", name = "left[ right]" },
+    "\\left[ ${1:${TM_SELECTED_TEXT}} \\right] $0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "<<", name = "leftangle rightangle" },
+    "\\left< ${1:${TM_SELECTED_TEXT}} \\right>$0"
+  ),
+
 }
 
 return math_iA
