@@ -138,27 +138,6 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "~~", name = "~" }, "\\sim "),
   ls.parser.parse_snippet({ trig = "conj", name = "conjugate" }, "\\overline{$1}$0"),
 
-  ls.parser.parse_snippet(
-    { trig = "(", name = "left( right)" },
-    "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
-  ),
-  ls.parser.parse_snippet(
-    { trig = "||", name = "left| right|" },
-    "\\left\\| ${1:${TM_SELECTED_TEXT}} \\right\\| $0"
-  ),
-  ls.parser.parse_snippet(
-    { trig = "{{", name = "left{ right}" },
-    "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
-  ),
-  ls.parser.parse_snippet(
-    { trig = "[", name = "left[ right]" },
-    "\\left[ ${1:${TM_SELECTED_TEXT}} \\right] $0"
-  ),
-  ls.parser.parse_snippet(
-    { trig = "<<", name = "leftangle rightangle" },
-    "\\left< ${1:${TM_SELECTED_TEXT}} \\right>$0"
-  ),
-
 }
 
 return math_iA
