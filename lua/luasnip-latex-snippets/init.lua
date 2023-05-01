@@ -99,10 +99,10 @@ M.setup = function(opts)
     default_priority = 0,
   })
 
-  M.setup_markdown(autosnippets)
+  M.setup_markdown(math_i, autosnippets)
 end
 
-M.setup_markdown = function(autosnippets)
+M.setup_markdown = function(math_i, autosnippets)
   local trigger_of_snip = function(s)
     return s.trigger
   end
@@ -139,6 +139,9 @@ M.setup_markdown = function(autosnippets)
     table.insert(filtered, snip)
   end
 
+  ls.add_snippets("markdown", math_i, {
+    default_priority = 0,
+  })
   ls.add_snippets("markdown", filtered, {
     type = "autosnippets",
     default_priority = 0,
