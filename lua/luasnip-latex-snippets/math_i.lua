@@ -70,6 +70,19 @@ local math_i = {
     { trig = "sequence", name = "Sequence indexed by n, from m to infinity" },
     "(${1:a}_${2:n})_{${2:n}=${3:m}}^{${4:\\infty}}"
   ),
+
+  ls.parser.parse_snippet(
+    { trig = "rm", name = "mathrm" },
+    "\\mathrm{$1}$0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "bf", name = "mathbf" },
+    "\\mathbf{$1}$0"
+  ),
+  ls.parser.parse_snippet(
+    { trig = "bb", name = "mathbb" },
+    "\\mathbb{$1}$0"
+  ),
 }
 
 return math_i
