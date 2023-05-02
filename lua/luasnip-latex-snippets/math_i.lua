@@ -83,6 +83,10 @@ local math_i = {
     { trig = "bb", name = "mathbb" },
     "\\mathbb{$1}$0"
   ),
+  ls.parser.parse_snippet(
+    { trig = "cal", name = "mathcal" },
+    "\\mathcal{$1}$0"
+  ),
 }
 
 return math_i
