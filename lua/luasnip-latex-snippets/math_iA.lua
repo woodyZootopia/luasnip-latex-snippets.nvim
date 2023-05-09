@@ -29,9 +29,9 @@ local math_iA = {
     end, {})
   ),
 
-  ls.parser.parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
-  ls.parser.parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
-  ls.parser.parse_snippet({ trig = "pw", name = "to the ... power ^{}" }, "^{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0"),
+  ls.parser.parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0"),
+  ls.parser.parse_snippet({ trig = "pw", name = "to the ... power ^{}" }, "^{$1}$0"),
   ls.parser.parse_snippet({ trig = "sb", name = "subscript" }, "_{$1}$0"),
   ls.parser.parse_snippet({ trig = "__", name = "subscript" }, "_{\\text{$1}}$0"),
   ls.parser.parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
